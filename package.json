@@ -1,0 +1,32 @@
+{
+  "name": "grunt-html2ts",
+  "version": "0.0.1",
+  "description": "Create typescript string templates for html files.",
+  "homepage": "https://github.com/BerndWessels/grunt-html2ts.git",
+  "repository": "https://github.com/BerndWessels/grunt-html2ts.git",
+  "author": {
+    "name": "Bernd Wessels",
+    "email": "wesselsbernd@gmail.com",
+    "url": ""
+  },
+  "keywords": [
+    "gruntplugin"
+  ],
+  "main": "Gruntfile.js",
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-nodeunit": "~0.3.0",
+    "jshint-stylish": "~0.1.5",
+    "load-grunt-tasks": "~0.3.0",
+    "lodash": "^3.6.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  }
+}
