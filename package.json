@@ -2,12 +2,12 @@
   "name": "grunt-html2ts",
   "version": "0.0.1",
   "description": "Create typescript string templates for html files.",
-  "homepage": "https://github.com/BerndWessels/grunt-html2ts.git",
+  "homepage": "https://github.com/BerndWessels/grunt-html2ts",
   "repository": "https://github.com/BerndWessels/grunt-html2ts.git",
   "author": {
     "name": "Bernd Wessels",
     "email": "wesselsbernd@gmail.com",
-    "url": ""
+    "url": "https://github.com/BerndWessels"
   },
   "keywords": [
     "gruntplugin"
