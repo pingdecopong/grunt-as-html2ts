@@ -45,13 +45,17 @@ var htmlTemplate = _.template(
 function compileHTML(filename, options) {
   var htmlContent = escapeContent(fs.readFileSync(filename).toString());
   htmlContent = stripBOM(htmlContent);
-  var moduleName = path.dirname(filename).replace(/\//gi, ".");
+  var moduleName = path.dirname(filename).replace(/\//gi, ".").toLowerCase().replace(/-(.)/g, function(match, group1) {
+    return group1.toUpperCase();
+  });
   if(options.truncateNamespace) {
     var truncateRegexp = new RegExp('^' + options.truncateNamespace + '.');
     moduleName = moduleName.replace(truncateRegexp, "");
   }
   var ext = path.extname(filename).replace('.', '');
-  var extFreename = path.basename(filename, '.' + ext);
+  var extFreename = path.basename(filename, '.' + ext).toLowerCase().replace(/-(.)/g, function(match, group1) {
+    return group1.toUpperCase();
+  });
   var fileContent = htmlTemplate({ modulename: moduleName, varname: extFreename, content: htmlContent });
   var outputfile = getOutputFile(filename, options.htmlOutDir, options.truncateDir, options.flatten);
   mkdirParent(path.dirname(outputfile));
