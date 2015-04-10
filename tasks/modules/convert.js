@@ -53,7 +53,7 @@ function compileHTML(filename, options) {
     moduleName = moduleName.replace(truncateRegexp, "");
   }
   var ext = path.extname(filename).replace('.', '');
-  var extFreename = path.basename(filename, '.' + ext).toLowerCase().replace(/-(.)/g, function(match, group1) {
+  var extFreename = path.basename(filename, '.' + ext).toLowerCase().replace(/[-.](.)/g, function(match, group1) {
     return group1.toUpperCase();
   });
   var fileContent = htmlTemplate({ modulename: moduleName, varname: extFreename, content: htmlContent });
