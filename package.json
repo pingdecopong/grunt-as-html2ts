@@ -1,6 +1,6 @@
 {
   "name": "grunt-html2ts",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Create typescript string templates for html files.",
   "homepage": "https://github.com/BerndWessels/grunt-html2ts",
   "repository": "https://github.com/BerndWessels/grunt-html2ts.git",

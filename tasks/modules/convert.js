@@ -91,7 +91,7 @@ function mkdirParent(dirPath, mode) {
   }
   catch (error) {
     // NOTE When it fail in this way, do the custom steps
-    if (error && error.errno === 34) {
+    if (error && error.code === 'ENOENT') {
       // NOTE Create all the parents recursively
       mkdirParent(path.dirname(dirPath), mode);
       // NOTE And then the directory
