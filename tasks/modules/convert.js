@@ -52,10 +52,16 @@ function compileHTML(filename, options) {
     var truncateRegexp = new RegExp('^' + options.truncateNamespace + '.');
     moduleName = moduleName.replace(truncateRegexp, "");
   }
+  if(options.namespace) {
+    moduleName = options.namespace;
+  }
   var ext = path.extname(filename).replace('.', '');
   var extFreename = path.basename(filename, '.' + ext).toLowerCase().replace(/[-.](.)/g, function(match, group1) {
     return group1.toUpperCase();
   });
+  if(options.propertyName) {
+    extFreename = options.propertyName;
+  }
   var fileContent = htmlTemplate({ modulename: moduleName, varname: extFreename, content: htmlContent });
   var outputfile = getOutputFile(filename, options.htmlOutDir, options.truncateDir, options.flatten);
   mkdirParent(path.dirname(outputfile));

@@ -23,7 +23,7 @@ Once the plugin has been installed, it may be enabled inside your Gruntfile with
 grunt.loadNpmTasks('grunt-as-html2ts');
 ```
 
-## The "as-html2ts" task
+## The "ashtml2ts" task
 
 ### Overview
 In your project's Gruntfile, add a section named `ashtml2ts` to the data object passed into `grunt.initConfig()`.
