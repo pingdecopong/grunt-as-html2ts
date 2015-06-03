@@ -1,6 +1,12 @@
-# grunt-html2ts
+# grunt-as-html2ts
 
-> Create typescript string templates for html files.
+htmlからTypeScriptへ変換するGruntタスクです
+
+>本プログラムはBerndWesselsさんが作成したgrunt-html2tsをフォークして作成しています。
+
+https://github.com/BerndWessels
+https://github.com/BerndWessels/grunt-html2ts
+
 
 ## Getting Started
 This plugin requires Grunt.
@@ -8,23 +14,23 @@ This plugin requires Grunt.
 If you haven't used [Grunt](http://gruntjs.com/) before, be sure to check out the [Getting Started](http://gruntjs.com/getting-started) guide, as it explains how to create a [Gruntfile](http://gruntjs.com/sample-gruntfile) as well as install and use Grunt plugins. Once you're familiar with that process, you may install this plugin with this command:
 
 ```shell
-npm install grunt-html2ts --save-dev
+npm install grunt-as-html2ts --save-dev
 ```
 
 Once the plugin has been installed, it may be enabled inside your Gruntfile with this line of JavaScript:
 
 ```js
-grunt.loadNpmTasks('grunt-html2ts');
+grunt.loadNpmTasks('grunt-as-html2ts');
 ```
 
-## The "html2ts" task
+## The "as-html2ts" task
 
 ### Overview
-In your project's Gruntfile, add a section named `html2ts` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `as-html2ts` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  html2ts: {
+  as-html2ts: {
     options: {
       // Task-specific options go here.
     },
@@ -68,7 +74,7 @@ In this example, all html files matching `test/app/**/*.html` will be transforme
 
 ```js
 grunt.initConfig({
-   html2ts: {
+   as-html2ts: {
       default: {
         options: {
           truncateNamespace: 'test',
@@ -83,6 +89,33 @@ grunt.initConfig({
     },
 })
 ```
+
+ファイル毎にnamespaceやmodule名を指定する場合は、gruntのfile機能を使用して以下のように指定します。
+
+```js
+grunt.initConfig({
+   as-html2ts: {
+      default: {
+        options: {
+          truncateNamespace: 'test',
+          truncateDir: 'test/app',
+          htmlOutDir: 'test/.out',
+          flatten: false
+        },
+        files: [
+            {
+                src: 'test/sample.html',
+                options: {
+                    namespace: "aaa/bbb",
+                    propertyName: "ccc"
+                }
+            }
+        ]
+      }
+    },
+})
+```
+
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [Grunt](http://gruntjs.com/).

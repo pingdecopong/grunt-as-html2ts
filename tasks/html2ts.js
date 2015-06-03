@@ -9,16 +9,19 @@
 'use strict';
 
 var convert = require('./modules/convert');
+var _ = require('lodash');
 
 module.exports = function (grunt) {
 
   // Please see the Grunt documentation for more information regarding task
   // creation: http://gruntjs.com/creating-tasks
 
-  grunt.registerMultiTask('html2ts', 'Create typescript string templates for html files.', function () {
+  grunt.registerMultiTask('as-html2ts', 'Create typescript string templates for html files.', function () {
 
     // Merge task-specific and/or target-specific options with these defaults.
     var options = this.options({
+      namespace: null,
+      propertyName: null,
       truncateNamespace: null,
       truncateDir: null,
       htmlOutDir: null,
@@ -36,8 +39,11 @@ module.exports = function (grunt) {
           return true;
         }
       });
+      var optionCp = _.clone(options);
+      var fileOptions = _.merge(optionCp, file.options);
       src.forEach(function(filepath){
-        convert.compileHTML(filepath, options);
+        // convert.compileHTML(filepath, options);
+        convert.compileHTML(filepath, fileOptions);
       });
     });
   });
