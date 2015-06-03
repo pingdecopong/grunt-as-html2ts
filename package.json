@@ -1,6 +1,6 @@
 {
   "name": "grunt-as-html2ts",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "HtmlからTypescriptへ変換するタスク",
   "homepage": "https://github.com/pingdecopong/grunt-as-html2ts",
   "repository": "https://github.com/pingdecopong/grunt-as-html2ts.git",
