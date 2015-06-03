@@ -26,11 +26,11 @@ grunt.loadNpmTasks('grunt-as-html2ts');
 ## The "as-html2ts" task
 
 ### Overview
-In your project's Gruntfile, add a section named `as-html2ts` to the data object passed into `grunt.initConfig()`.
+In your project's Gruntfile, add a section named `ashtml2ts` to the data object passed into `grunt.initConfig()`.
 
 ```js
 grunt.initConfig({
-  as-html2ts: {
+  ashtml2ts: {
     options: {
       // Task-specific options go here.
     },
@@ -74,7 +74,7 @@ In this example, all html files matching `test/app/**/*.html` will be transforme
 
 ```js
 grunt.initConfig({
-   as-html2ts: {
+   ashtml2ts: {
       default: {
         options: {
           truncateNamespace: 'test',
@@ -94,7 +94,7 @@ grunt.initConfig({
 
 ```js
 grunt.initConfig({
-   as-html2ts: {
+   ashtml2ts: {
       default: {
         options: {
           truncateNamespace: 'test',
