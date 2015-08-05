@@ -36,7 +36,7 @@ function trimStart(character, string) {
 }
 var htmlTemplate = _.template(
   '/* tslint:disable:max-line-length */\n' +
-  'module <%= modulename %> {\n' +
+  'namespace <%= modulename %> {\n' +
   '\'use strict\';\n' +
   '  export var <%= varname %>: string = \'<%= content %>\';\n' +
   '}\n');
