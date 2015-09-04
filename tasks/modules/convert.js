@@ -13,15 +13,18 @@ var escapeContent = function (content, quoteChar) {
   if (quoteChar === void 0) { quoteChar = '\''; }
   var quoteRegexp = new RegExp('\\' + quoteChar, 'g');
   var nlReplace = '';
-  return content.replace(quoteRegexp, '\\' + quoteChar).replace(/\r?\n/g, nlReplace)
-    // remove newline / carriage return
+  return content.replace(/\\/g, "\\\\")
+    .replace(quoteRegexp, '\\' + quoteChar)
+    .replace(/\r?\n/g, nlReplace)
+    //// remove newline / carriage return
     .replace(/\n/g, "")
-    // remove whitespace (space and tabs) before tags
+    //// remove whitespace (space and tabs) before tags
     .replace(/[\t ]+</g, "<")
-    // remove whitespace between tags
+    //// remove whitespace between tags
     .replace(/>[\t ]+</g, "><")
-    // remove whitespace after tags
-    .replace(/>[\t ]+$/g, ">");
+    //// remove whitespace after tags
+    .replace(/>[\t ]+$/g, ">")
+    ;
 };
 // Remove bom when reading utf8 files
 function stripBOM(str) {
